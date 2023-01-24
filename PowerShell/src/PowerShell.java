@@ -38,11 +38,18 @@ public class PowerShell {
 
                 if(x.equals("exit")) return;
 
-                java.io.File diretorio = new java.io.File("C:\\Users\\Cliente\\OneDrive\\Documentos\\ProjetosGit\\PowerShell\\Diretorios\\" + x); 
+                java.io.File diretorio = new java.io.File("C:\\Users\\alexs\\OneDrive\\Documentos\\SO\\PowerShell\\Diretorios" + x); 
 
                 boolean statusDir = diretorio.mkdir();
                 System.out.print(statusDir); 
 
+            }
+
+            if(a.equals("dir")){
+                System.out.print("/>dir ");
+                y = in.nextLine();
+
+                listarDiretorio(y);
 
             }
 
@@ -50,5 +57,14 @@ public class PowerShell {
 
         }
 
+    }
+
+    public static void listarDiretorio(String dir){
+
+        File diretorio = new File(dir);
+
+            for (File file : diretorio.listFiles()) {
+                System.out.println(file.getName());
+            }
     }
 }
