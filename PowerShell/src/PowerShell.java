@@ -24,11 +24,14 @@ public class PowerShell {
             if(a.equals("mv")){
                 System.out.print("/>mv ");
                 x = in.nextLine();
-                if(x.equals("exit")) return;
+                if(!x.equals("exit")){
 
                 System.out.print("/>mv " + x + " ");
                 y = in.nextLine();
-                if(y.equals("exit")) return;
+                if(!y.equals("exit")){
+
+                }
+                }
 
             }
 
@@ -36,15 +39,28 @@ public class PowerShell {
                 System.out.print("/>mkdir ");
                 x = in.nextLine();
 
-                if(x.equals("exit")) return;
+                if(!x.equals("exit")){
 
                 java.io.File diretorio = new java.io.File("C:\\Users\\Cliente\\OneDrive\\Documentos\\ProjetosGit\\PowerShell\\Diretorios\\" + x); 
 
                 boolean statusDir = diretorio.mkdir();
-                System.out.print(statusDir); 
-
-
+                System.out.println("/>" + statusDir); 
+                }
             }
+
+            if(a.equals("rm")){
+                System.out.print("/>rm ");
+                x = in.nextLine();
+
+                if(!x.equals("exit")){
+
+                    File f = new File("C:\\Users\\Cliente\\OneDrive\\Documentos\\ProjetosGit\\PowerShell\\Diretorios\\" + x);
+                    if ((f.exists()) && (f.isDirectory())) f.delete();
+
+                }
+            }
+
+            
 
 
 
