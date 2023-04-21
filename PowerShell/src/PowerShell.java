@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
 
 // pasta dos arquivos : C:\\Users\\Cliente\\OneDrive\\Documentos\\ProjetosGit\\PowerShell\\Diretorios\\
 
@@ -94,11 +93,12 @@ public class PowerShell {
                 x = in.nextLine();
 
                 if(!x.equals("exit")){
-                    System.out.print("/> mv " + x + " ");
+                    System.out.print("/>mv " + x + " ");
                     y = in.nextLine();
                     if(!y.equals("exit")){
                         File arq = new File(local + x + ".txt");
                         arq.renameTo(new File(local + y + ".txt"));
+                        System.out.println("/> Arquivo editado");
                     }
                 }
             }
@@ -114,6 +114,7 @@ public class PowerShell {
                     byte [] textoEmByte = texto.getBytes();
                     try{
                         Files.write(caminho, textoEmByte);
+                        System.out.println("/> Arquivo editado");
                     }catch(Exception e){
                         System.out.println("Erro ao alterar o arquivo");
                     }
